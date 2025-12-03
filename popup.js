@@ -20,6 +20,10 @@ document.getElementById('clearStats').addEventListener('click', async () => {
   }, 2000);
 });
 
+document.getElementById('settingsButton').addEventListener('click', () => {
+  chrome.tabs.create({ url: 'settings.html' });
+});
+
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   const currentTab = tabs[0];
   const statusEl = document.getElementById('status');
